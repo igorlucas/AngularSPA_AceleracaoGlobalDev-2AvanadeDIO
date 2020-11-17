@@ -1,0 +1,17 @@
+<main class="container" *ngIf="!isLoading">
+  <h1>Pesquisar Pokemon</h1>
+  <app-search (pickedPokemon)="onPickedPokemon($event)">
+  </app-search>
+  <app-card [selectedPokemon]="selectedPokemon"></app-card>
+  <div class="container jumbotron" style="margin: 1rem auto;">
+    <h1 class="text-center">Exemplos de pokemons</h1>
+    <div class="row row-cols-4">
+      <div class="col" *ngFor=" let specie of species">
+        {{specie.name}}
+      </div>
+    </div>
+  </div>
+</main>
+<ng-template #is_loading>
+  <app-spinner [message]="'Carregando dados...'"></app-spinner>
+</ng-template>

@@ -1,0 +1,22 @@
+<mat-card *ngIf="selectedPokemon">
+  <mat-card-title>POKEMON</mat-card-title>
+  <mat-card-subtitle>
+    {{selectedPokemon.name | uppercase}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div>
+      CATEGORIAS:
+      <span *ngFor="let data of selectedPokemon.types">
+        {{data.type.name | uppercase}}
+      </span>
+    </div>
+    <div>
+      ABILIDADES:
+      <span *ngFor="let data of selectedPokemon.abilities">
+        {{data.ability.name | uppercase}}
+      </span>
+    </div>
+    <img mat-card-md-image style="display: flex;
+    margin: auto;" [src]="selectedPokemon.sprites.front_shiny">
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,6 @@
+<form (submit)="onSubmit()">
+    <mat-form-field appearance="legacy">
+      <input matInput placeholder="Nome do pokemon" name="name" [(ngModel)]="name">
+      <mat-icon matSuffix (click)="onSubmit()" style="cursor: pointer;">search</mat-icon>
+    </mat-form-field>
+</form>
